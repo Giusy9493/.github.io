@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giusy Somma | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header class="header-flex">
+  <div class="header-text">
+    <h1>Giusy Somma <span class="bee-icon">🐝</span></h1>
+    <p class="subtitle">Web Developer & Front-End Designer</p>
+    <p class="intro">I build clean, fast, and elegant websites.</p>
+
+    <div class="social-badges">
+      <a href="https://github.com/Giusy9493" target="_blank">
+        <img src="https://img.shields.io/badge/GitHub-Giusy9493-000000?style=flat&logo=github&logoColor=white" alt="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/giusy-somma" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-Giusy%20Somma-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
+
+  <div class="skills-box">
+  <div class="skills-hex-column">
+    <h3>Languages</h3>
+    <div class="hex-container">
+      <div class="hex"><span>HTML5</span></div>
+      <div class="hex"><span>CSS3</span></div>
+      <div class="hex"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+  <div class="skills-hex-column">
+    <h3>Tools & Design</h3>
+    <div class="hex-container">
+      <div class="hex"><span>Git & GitHub</span></div>
+      <div class="hex"><span>VS Code</span></div>
+      <div class="hex"><span>Responsive Design</span></div>
+      <div class="hex"><span>Figma (Basics)</span></div>
+    </div>
+  </div>
+</div>
+</header>
+
+<main>
+  <section class="projects slide-in-left">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>NautiCal Rent</h3>
+      <p class="project-description">
+        Promotional website for a boat rental service based in Calabria. Featuring a clean layout, dynamic sections, and a seamless mobile experience.
+      </p>
+      <a href="https://giusy9493.github.io/nautical-rent/" target="_blank">View project</a>
+    </div>
+  </section>
+
+  <section class="contact slide-in-left">
+    <h2>Contacts</h2>
+    <p class="contact-info">Email: <a href="mailto:tuaemail@example.com">tuaemail@blablabla.com</a></p>
+    <p class="contact-info">GitHub: <a href="https://github.com/Giusy9493" target="_blank">github.com/Giusy9493</a></p>
+  </section>
+</main>
+
+  <footer>
+    <p>© 2025 Giusy Somma. All rights reserved.</p>
+    <p style="font-style: italic; margin-top: 1rem;">“Simplicity is the ultimate sophistication.” – Leonardo da Vinci</p>
+</footer>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const slideSections = document.querySelectorAll('.slide-in-left');
+      slideSections.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.animation = 'slideInLeft 1s ease-out forwards';
+        }, 300 * i);
+      });
+    });
+  </script>
+</body>
+</html>
