@@ -1,11 +1,18 @@
-/* Reset base */
+/* -------------------------------------
+   BASE
+-------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Font e colori generali */
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: linear-gradient(to bottom, #ffffff 0%, #fdf6ec 100%);
+  padding: 2rem;
+  color: #222;
+}
 
 body::before {
   content: "";
@@ -22,22 +29,50 @@ body::before {
   pointer-events: none;
 }
 
-body {
-   font-family: 'Cormorant Garamond', serif;
-background-color: #ffffff;
-  padding: 2rem;
-  background: linear-gradient(to bottom, #ffffff 0%, #fdf6ec 100%);
-
+main {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* -------------------------------------
+   TYPOGRAPHY
+-------------------------------------- */
+h1 {
+  font-size: 3.5rem;
+}
 
+h2 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  border-left: 5px solid #d4af37;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
 
-/* Intestazione */
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.intro {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* -------------------------------------
+   HEADER LAYOUT
+-------------------------------------- */
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: nowrap; /* 🔁 blocca la riga */
+  flex-wrap: nowrap;
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -57,40 +92,32 @@ background-color: #ffffff;
   justify-content: flex-end;
   gap: 2rem;
 }
+
 .skills-hex-column {
   flex: 1 1 250px;
 }
 
 .skills-hex-column h3 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
   border-left: 4px solid #d4af37;
   padding-left: 0.5rem;
   color: #222;
 }
 
+/* -------------------------------------
+   HEXAGON GRID
+-------------------------------------- */
 .hex-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
-  margin-left: -26px; /* sovrapposizione orizzontale */
+  margin-left: -26px;
 }
 
 .hex {
   width: 80px;
   height: 45px;
   background-color: #fffbe6;
-  clip-path: polygon(
-    50% 0%,
-    93% 25%,
-    93% 75%,
-    50% 100%,
-    7% 75%,
-    7% 25%
-  );
-  margin: 4px 0;
-  margin-left: 20px; /* sovrapposizione orizzontale */
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  margin: 4px 0 4px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,44 +125,23 @@ background-color: #ffffff;
   font-size: 0.75rem;
   color: #333;
   border: 1px dashed #d4af37;
-  transition: background-color 0.3s ease;
-  text-align: center;
   padding: 0 4px;
-  position: relative;
-}
-
-
-.hex:nth-child(even) {
-  transform: translateY(22px); /* adattato alla nuova altezza */
-}
-/* crea l'effetto a nido d'ape */
-.hex:nth-child(odd) {
-  transform: translateY(0);
+  transition: background-color 0.3s ease;
 }
 
 .hex:nth-child(even) {
-  transform: translateY(28px); /* metà altezza per disporli sfalsati */
+  transform: translateY(28px);
 }
 
 .hex:hover {
   background-color: #fdf1c7;
 }
-.tech-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
 
-
-
-
-
-/* Social badge */
+/* -------------------------------------
+   SOCIAL BADGES
+-------------------------------------- */
 .social-badges {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -150,103 +156,15 @@ background-color: #ffffff;
   transform: scale(1.1);
 }
 
-/* Sezioni principali */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.header-text h1 {
-  font-size: 3.5rem;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.intro {
-  font-size: 1.3rem;
-  color: #333;
-}
-
+/* -------------------------------------
+   PROJECTS SECTION
+-------------------------------------- */
 section {
   margin-bottom: 3rem;
   padding: 2rem 0;
-  border-bottom: 2px solid #111; /* linea visibile e coerente con stile */
-}
-
-
-section h2 {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  border-left: 5px solid #d4af37;
-  padding-left: 1rem;
-  margin-bottom: 2rem;
- 
-}
-
-.technologies {
-  padding: 2rem 0;
   border-bottom: 2px solid #111;
-  text-align: center;
 }
 
-.technologies h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #111;
-  margin-bottom: 2rem;
-}
-
-.tech-category {
-  margin-bottom: 2rem;
-}
-
-.tech-category h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #222;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.tech-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  list-style: none;
-  padding: 0;
-}
-
-.tech-list li {
-  background-color: #fffbe6;
-  border: 1px dashed #d4af37;
-  padding: 0.6rem 1rem;
-  border-radius: 30px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #333;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.tech-list li:hover {
-  background-color: #fdf1c7;
-}
-
-.tech-list li:hover {
-  background-color: #eaeaea;
-}
-
-/* Progetti */
 .projects .project {
   margin-bottom: 1.5rem;
 }
@@ -255,6 +173,12 @@ section h2 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: #222;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
 }
 
 .projects .project a {
@@ -282,14 +206,9 @@ section h2 {
   transform: translateX(4px);
 }
 
-.project-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* Contatti */
-
+/* -------------------------------------
+   CONTACTS
+-------------------------------------- */
 .contact-info {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -297,19 +216,19 @@ section h2 {
 
 .contact a {
   color: #d4af37;
-  text-decoration: none;
-   font-weight: 600;
+  font-weight: 600;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 .contact a:hover {
+  color: #b9912c;
   text-decoration: underline;
-   color: #b9912c;
-   
 }
 
-
-/* Footer */
+/* -------------------------------------
+   FOOTER
+-------------------------------------- */
 footer {
   text-align: center;
   font-size: 0.9rem;
@@ -317,24 +236,9 @@ footer {
   margin-top: 3rem;
 }
 
-
-/* Animazione slide-in da sinistra */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.slide-in-left {
-  animation: slideInLeft 1s ease-out forwards;
-  opacity: 0; /* nasconde fino a inizio animazione */
-}
-
+/* -------------------------------------
+   ANIMATIONS
+-------------------------------------- */
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -349,14 +253,22 @@ footer {
   }
 }
 
+.slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+  opacity: 0;
+}
 
+/* -------------------------------------
+   RESPONSIVE
+-------------------------------------- */
 @media (max-width: 768px) {
   .header-flex {
     flex-direction: column;
     align-items: center;
   }
 
-  .header-text, .skills-box {
+  .header-text,
+  .skills-box {
     max-width: 100%;
     text-align: center;
   }
