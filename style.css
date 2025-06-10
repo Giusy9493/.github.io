@@ -249,6 +249,18 @@ h2::after {
   text-align: left;
 }
 
+.contacts {
+  padding-top: 6rem;
+  text-align: center;
+}
+
+.contacts h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
 .quick-links {
   margin-bottom: 2rem;
 }
