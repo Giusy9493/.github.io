@@ -11,17 +11,34 @@
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="project.html">Progetti</a>
-  <a href="contacts.html">Contatti</a>
+  <a href="project.html">Projects</a>
+  <a href="contacts.html">Contacts</a>
 </nav>
 
-<main class="page-content">
-  <section>
-    <h2>Contatti<span class="bee-icon"><img src="img/bee.png" alt="Bee" /></span></h2>
-    <p class="contact-info">Email: <a href="mailto:giusy@eblabla.com">giusy@blabla.com</a></p>
-    <p class="contact-info">GitHub: <a href="https://github.com/sommag" target="_blank">github.com/sommag</a></p>
-    <p class="contact-info">LinkedIn: <a href="https://www.linkedin.com/in/giusy-somma" target="_blank">linkedin.com/in/giusy-somma</a></p>
-  </section>
+<main class="contacts">
+  <h2>Contact Me <span class="bee-icon"><img src="img/bee.png" alt="Bee" /></span></h2>
+
+<div class="contact-box">
+  <div class="quick-links">
+    <p>🐙 <a href="https://github.com/sommag" target="_blank">github.com/sommag</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/giusy-somma" target="_blank">linkedin.com/in/giusy-somma</a></p>
+  </div>
+
+  <form action="mailto:giusysomma93@gmail.com" method="POST" enctype="text/plain">
+    <label for="name">Nome</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Messaggio</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Invia Messaggio</button>
+  </form>
+</div>
+
+
 </main>
 
 <footer>
