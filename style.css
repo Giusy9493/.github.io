@@ -8,39 +8,61 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #fff;
+  background: #fdf6ec;
   color: #222;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(to right, #fdf6ec, #ffeecb);
   backdrop-filter: blur(6px);
   padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
   z-index: 999;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #e2cfa3;
 }
 
 nav a {
   text-decoration: none;
-  color: #222;
+  color: #333;
   font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 1.05rem;
+  position: relative;
+  padding: 0.3rem 0;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #d4af37;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
-  color: #d4af37;
+  color: #000;
 }
 
 .hero {
   height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +76,9 @@ nav a:hover {
   background-repeat: repeat;
   background-size: 300px;
   background-position: center;
+  flex: 1;
 }
+
 
 h1 {
   font-family: 'Raleway', sans-serif;
@@ -129,47 +153,32 @@ h1 {
 }
 
 
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #fff;
-  color: #666;
+  background: linear-gradient(to right, #fdf6ec, #faebd7);
+  color: #4a3f2b;
   font-size: 0.9rem;
-  margin-top: 4rem;
+  margin-top: 0;
+  border-top: 1px solid #e2cfa3;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.projects {
-  max-width: 900px;
-  margin: 7rem auto 4rem;
-  padding: 0 1rem;
-}
 
-h2 {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  text-align: center;
-  margin-bottom: 3rem;
-  font-weight: 600;
-  color: #222;
-}
-
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #d4af37;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-}
 
 .project-grid {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .project-block {
+  background: #f9f2e7; /* avorio caldo */
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(160, 140, 90, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -177,8 +186,14 @@ h2::after {
   animation: fadeUp 0.8s ease-out forwards;
 }
 
+.project-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(180, 160, 100, 0.12);
+}
+
 .project-block:nth-child(1) { animation-delay: 0.2s; }
 .project-block:nth-child(2) { animation-delay: 0.4s; }
+.project-block:nth-child(3) { animation-delay: 0.6s; }
 
 @keyframes fadeUp {
   from {
@@ -193,50 +208,58 @@ h2::after {
 
 .project-block .meta {
   font-size: 0.95rem;
-  color: #666;
+  color: #7a6b45;
+  font-style: italic;
 }
 
 .project-block .content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: #3a2d1f; /* marrone caldo e leggibile */
 }
 
 .project-block .content p {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.05rem;
+  color: #5b4733;
   line-height: 1.6;
   margin-bottom: 0.8rem;
 }
 
 .project-block .content a {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #d4af37;
+  color: #af8b3c; /* oro caldo */
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .project-block .content a:hover {
-  color: #b9912c;
-  border-bottom: 1px solid #b9912c;
+  color: #8b6f28;
+  border-bottom: 1px solid #8b6f28;
 }
 
 @media (min-width: 768px) {
+  .project-grid {
+    gap: 3rem;
+  }
+
   .project-block {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  .project-block .meta {
-    flex: 0 0 200px;
-  }
-
+ .project-block .meta {
+  font-size: 0.95rem;
+  color: #7b6a4e;
+  font-style: italic;
+}
   .project-block .content {
     flex: 1;
   }
 }
+
+
 
 .contact-box {
   max-width: 500px;
